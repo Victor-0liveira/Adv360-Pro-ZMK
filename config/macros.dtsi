@@ -222,11 +222,3 @@
     bindings = <&mkp MB1 &mkp MB1>;
     display-name = "Double Click";
   };
-
-  macro_delete_line: macro_delete_line {
-    compatible = "zmk,behavior-macro";
-    label = "macro_delete_line";
-    #binding-cells = <0>;
-    bindings = <&kp HOME>, <&kp LS(DOWN)>, <&kp DEL>;
-    display-name = "Delete Line";
-  };
