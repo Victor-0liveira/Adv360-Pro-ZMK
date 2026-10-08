@@ -16,7 +16,6 @@ if BOARD_ADV360_RIGHT
 
     config ZMK_KEYBOARD_NAME
     default "Adv360 Pro rt"
-
 endif # BOARD_ADV360_RIGHT
 
 
