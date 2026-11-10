@@ -1,6 +1,129 @@
-# Kinesis Advantage 360 Pro ZMK Config
+<div align="center">
 
-## Modifying the keymap
+# ⌨️ My Kinesis Advantage 360 Pro
+
+**A split, concave, column-staggered keyboard running custom [ZMK](https://zmk.dev) firmware, built in the cloud and flashed over USB.**
+
+![ZMK](https://img.shields.io/badge/firmware-ZMK-6E40C9?style=for-the-badge)
+![Split](https://img.shields.io/badge/layout-split%20%C2%B7%20concave-1f6feb?style=for-the-badge)
+![Bluetooth](https://img.shields.io/badge/Bluetooth-5%20profiles-0082FC?style=for-the-badge&logo=bluetooth&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/built%20with-GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+
+<sub>Part of my Linux setup → <a href="https://github.com/Victor-0liveira/dotfiles">Victor-0liveira/dotfiles</a></sub>
+
+</div>
+
+---
+
+## 🧗 The adventure
+
+Switching to a split keyboard is not a purchase. It is a **commitment**.
+
+The Advantage 360 throws out almost everything your fingers know:
+
+- **The halves are separate.** Each hand sits at shoulder width, wrists straight, no more twisting inward.
+- **The keys sit in concave wells**, in straight columns instead of the staggered rows typewriters left us in the 1800s. Your fingers move up and down, not diagonally.
+- **The thumbs finally have a job.** On a normal keyboard they share one spacebar. Here each thumb gets a cluster of **6 keys**, and that is where Backspace, Enter, Ctrl, Alt and Super live now.
+- **Nothing is fixed.** The firmware is open source, so every key, layer and macro is code, versioned in this repo and compiled by GitHub Actions on every push.
+
+The first days feel like learning to type again. Then something clicks: shortcuts get *closer*, the mouse gets *further*, and going back to a laptop keyboard feels cramped.
+
+### 📜 The commit log tells the story
+
+This repo's history is an honest diary of tuning a keyboard from scratch:
+
+```mermaid
+timeline
+    title Tuning the 360 Pro (October 2026)
+    Oct 5 : modifier keys : meta and ctrl right
+    Oct 6 : "don't know" : pt br : macro testing : "wow"
+    Oct 7 : del word : "try" : "aaaaa" : homerow mods
+    Oct 8 : "undoing" : delete line : page up/down : "mouse tbm?kkkk" : fn layer
+    Oct 9 : scroll : select line
+    Oct 15 : Page Up/Down
+```
+
+Yes, there is a commit called `aaaaa`. Yes, home row mods came in on the 7th and got rolled back on the 8th. That's how keyboard tuning goes: you try something, live with it for a day, and keep only what survives. 🫡
+
+---
+
+## 🗺️ My layout
+
+Four layers, switched from the outer columns and the thumb keys.
+
+### Layer 0: Base
+
+```
+  LEFT HAND                                     RIGHT HAND
+ ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ │  =  │  1  │  2  │  3  │  4  │  5  │ KP⇄ │   │ MOD │  6  │  7  │  8  │  9  │  0  │  -  │
+ ├─────┼─────┼─────┼─────┼─────┼─────┼─────┘   └─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ │ Tab │  Q  │  W  │  E  │  R  │  T  │               │  Y  │  U  │  I  │  O  │  P  │  [  │
+ ├─────┼─────┼─────┼─────┼─────┼─────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
+ │ Esc │  A  │  S  │  D  │  F  │  G  │               │  H  │  J  │  K  │  L  │  ;  │  '  │
+ ├─────┼─────┼─────┼─────┼─────┼─────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
+ │Shift│  Z  │  X  │  C  │  V  │  B  │               │  N  │  M  │  ,  │  .  │  /  │Shift│
+ ├─────┼─────┼─────┼─────┼─────┼─────┘               └─────┼─────┼─────┼─────┼─────┼─────┤
+ │ FN  │  `  │Caps │  ←  │  →  │                           │  ↑  │  ↓  │  \  │  ]  │ FN  │
+ └─────┴─────┴─────┴─────┴─────┘                           └─────┴─────┴─────┴─────┴─────┘
+
+  THUMB CLUSTERS
+              ┌─────┬─────┐                  ┌─────┬─────┐
+              │ Alt │ Del │                  │AltGr│ Alt │
+              └─────┼─────┤                  ├─────┼─────┘
+                    │Ctrl │                  │Ctrl │
+        ┌─────┬─────┼─────┤                  ├─────┼─────┬─────┐
+        │     │Ctrl │     │                  │     │     │     │
+        │  ⌫  │  +  │Super│                  │Super│  ⏎  │  ␣  │
+        │     │  ⌫  │     │                  │     │     │     │
+        └─────┴─────┴─────┘                  └─────┴─────┴─────┘
+```
+
+What's different from the stock layout:
+
+- **The left thumb deletes:** `⌫` erases a character and `Ctrl+⌫` **erases a whole word**, without leaving the home row.
+- **The right thumb sends:** `⏎` and `␣` sit side by side, so each thumb handles half the work.
+- **Arrows split between the hands:** `← →` on the left, `↑ ↓` on the right.
+- `Alt`, `Ctrl` and `Super` on **both** thumbs, so any shortcut can be pressed with two hands.
+
+### Layer 1: Fn (hold `FN`), keyboard as a mouse 🖱️
+
+```
+ F1   F2   F3   F4   F5   F6                    F7   F8   F9   F10  F11  F12
+
+  ·    ·   ⇞scr  ▲   ⇟scr  ·                    ·   🔅   🔆    ·    ·    ·
+  ·    ·    ◀   🖱️L   ▶    ·                   SEL⎯ Home End  DEL⎯  ·    ·
+  ·    ·   ⇠scr  ▼   ⇢scr  ·                    ·   🔉   🔊   ⏯    ·    ·
+                                                    PgUp PgDn
+```
+
+- **Left hand = mouse.** `E S F C` move the pointer (up, left, right, down), `D` clicks, and `W/R` and `X/V` scroll in every direction. Browsing without leaving the keyboard is a superpower.
+- **Right hand = editing.** `H` **selects the whole line** and `L` **deletes the whole line** (custom macros: `Home → Shift+↓ → Del`), plus `Home/End`, media and brightness controls.
+
+### Layer 2: Keypad (toggle with `KP⇄`)
+
+The right half turns into a **numpad** (`7 8 9 / 4 5 6 / 1 2 3 / 0 .`, plus `+ - * / =` and `Enter`). The left thumb gets `Home End PgUp PgDn`. Handy for spreadsheets and math.
+
+### Layer 3: Mod (hold `MOD`)
+
+Hardware control: switch between **5 Bluetooth devices** (`1`–`5`), clear a pairing, enter the bootloader, check the battery, turn the backlight and RGB on and off.
+
+---
+
+## 🧪 Under the hood
+
+- **Home row mods, staged for a comeback.** `hml` / `hmr` are already defined in [`config/adv360.keymap`](config/adv360.keymap) with *bilateral* hold-tap: a modifier on the left half only triggers when combined with a key on the **right** half (and vice versa). That way fast rolls on the same hand never fire Ctrl or Shift by accident.
+- **Macros** in [`config/macros.dtsi`](config/macros.dtsi): select line, delete line, auto-paired `() [] {} "" ''` with the cursor placed inside, double click.
+- **CI/CD for a keyboard.** Every push triggers GitHub Actions, which compiles the ZMK firmware for both halves. I download the `.uf2` and flash it by dragging and dropping it in the bootloader.
+- Most edits are made in [Nick Coutsos's keymap editor](https://nickcoutsos.github.io/keymap-editor/), which commits straight to this repo (hence the `keymap-editor[bot]` commits).
+
+---
+
+<details>
+<summary><b>📦 Original Kinesis docs: building and flashing the firmware</b></summary>
+
+
+### Modifying the keymap
 
 [The ZMK documentation](https://zmk.dev/docs) covers both basic and advanced functionality and has a table of OS compatibility for keycodes. Please note that the RGB Underglow, Backlight and Power Management sections are not relevant to the Advantage 360 Pro's custom ZMK fork. For more information see [this note](#note)
 
@@ -9,7 +132,7 @@
 
 Certain ZMK features (e.g. combos) require knowing the exact key positions in the matrix. They can be found in both image and text format [here](assets/key-positions.md)
 
-## Building the Firmware with GitHub Actions
+### Building the Firmware with GitHub Actions
 
 ### Setup
 
@@ -21,7 +144,7 @@ Certain ZMK features (e.g. combos) require knowing the exact key positions in th
 1. Push a commit to trigger the build.
 2. Download the artifact.
 
-## Building the Firmware in a local container
+### Building the Firmware in a local container
 
 ### Setup
 
@@ -69,7 +192,7 @@ The built docker container and compiled firmware files can be deleted with `make
 
 Creating the docker container takes some time. Therefore `make clean_firmware` can be used to only clean firmware without removing the docker container. Similarly `make clean_image` can be used to remove the docker container without removing compiled firmware files.
 
-## Flashing firmware
+### Flashing firmware
 
 Follow the programming instruction on page 8 of the [Quick Start Guide](https://kinesis-ergo.com/wp-content/uploads/Advantage360-Professional-QSG-v8-25-22.pdf) to flash the firmware.
 
@@ -97,23 +220,23 @@ If you encounter a git conflict when updating your repository to V3.0 please fol
 
 Updating from V2.0 based firmwares to V3.0 based firmwares can be a rather complex process. There are reset files for every major firmware revision as well as documentation on the update process available [here](https://kinesis-ergo.com/support/kb360pro/#firmware-updates).
 
-## Versioning
+### Versioning
 
 Starting on 11/15/2023 the Advantage 360 Pro will now automatically record the compilation date, branch and Git commit hash in a macro that can be accessed with Mod+V. This will type out the following string: YYYYMMDD-XXXX-YYYYYY, where XXXX is the first 4 characters of the Git branch and YYYYYY is the Git commit hash. In addition to this the builds compiled by GitHub actions are now timestamped and also record the commit hash in the filename. 
 
-## N-Key Rollover
+### N-Key Rollover
 
 By default this keyboard has NKRO enabled, however for compatibility reasons the higher ranges are not enabled. If you want to use F13-F24 or the INTL1-9 keys with NKRO enabled you can change `CONFIG_ZMK_HID_KEYBOARD_EXTENDED_REPORT=n` to `CONFIG_ZMK_HID_KEYBOARD_EXTENDED_REPORT=y` in [adv360_left_defconfig](/config/boards/arm/adv360/adv360_left_defconfig#L65)
 
-## Battery reporting
+### Battery reporting
 
 By default reporting the battery level over BLE is disabled as this can cause some computers to spontaneously wake up repeatedly. If you'd like to enable this functionality change `CONFIG_BT_BAS=n` to  `CONFIG_BT_BAS=y` in [adv360_left_defconfig](/config/boards/arm/adv360/adv360_left_defconfig#L58).
 
-## Modifier indicator color
+### Modifier indicator color
 
 The color of the CAPS/NUM/SCROLL LOCK indicator LEDs may be configured by specifying a hexadecimal RGB color code. For example, `CONFIG_ZMK_RGB_UNDERGLOW_MOD_COLOR=0xFF0000` would give red indicator colors. In order to set the indicator color on both modules, ensure that both [adv360_left_defconfig](/config/boards/arm/adv360/adv360_left_defconfig) and [adv360_right_defconfig](/config/boards/arm/adv360/adv360_right_defconfig) have been updated.
 
-## Layer colors
+### Layer colors
 
 A total of 32 layers are supported by ZMK, with the highest currently active layer displayed using the layer LEDs on each of the left and right modules. All possible colors are listed below; for the first 8 layers the same color is displayed on both modules. After that, only the right module color will cycle through until "rolling over", which will cause the left module color to change as well (and this then repeats). To avoid confusion, the black/off LED color is only used for layer 0.
 
@@ -128,11 +251,11 @@ A total of 32 layers are supported by ZMK, with the highest currently active lay
 | 6 | <img valign='middle' src='assets/swatches/00FFFF.svg'/> <img valign='middle' src='assets/swatches/00FFFF.svg'/> | 14 | <img valign='middle' src='assets/swatches/0000FF.svg'/> <img valign='middle' src='assets/swatches/FFFFFF.svg'/> | 22 | <img valign='middle' src='assets/swatches/00FF00.svg'/> <img valign='middle' src='assets/swatches/FF0000.svg'/> | 30 | <img valign='middle' src='assets/swatches/FF0000.svg'/> <img valign='middle' src='assets/swatches/00FFFF.svg'/> |
 | 7 | <img valign='middle' src='assets/swatches/FFFF00.svg'/> <img valign='middle' src='assets/swatches/FFFF00.svg'/> | 15 | <img valign='middle' src='assets/swatches/0000FF.svg'/> <img valign='middle' src='assets/swatches/00FF00.svg'/> | 23 | <img valign='middle' src='assets/swatches/00FF00.svg'/> <img valign='middle' src='assets/swatches/FF00FF.svg'/> | 31 | <img valign='middle' src='assets/swatches/FF0000.svg'/> <img valign='middle' src='assets/swatches/FFFF00.svg'/> |
 
-## Changelog
+### Changelog
 
 The changelog for both the config repo and the underlying ZMK fork that the config repo builds against can be found [here](CHANGELOG.md).
 
-## Beta testing
+### Beta testing
 
 The Advantage 360 Pro is always getting updates and refinements. If you are willing to beta test you can follow [this guide from ZMK](https://zmk.dev/docs/features/beta-testing#testing-features) on how to change where your config repo points to. The `west.yml` file that is mentioned is located in config/. [This link](config/west.yml) can take you to the file. Typically you will only need to change the `revision: ` to match the beta branch. There is currently no beta branch available for testing.
 
@@ -140,13 +263,13 @@ Feedback on beta branches should be submitted as a GitHub issue on the base ZMK 
 
 In the event of a major update the beta branch may not be compatible with the current mainline version of the config repository. If this is the case it will be detailed here along with instructions on how to update.
 
-## Note
+### Note
 
 By default this config repository references [a customised version of ZMK](https://github.com/ReFil/zmk/tree/adv360-z3.5) with Advantage 360 Pro specific functionality and changes over [base ZMK](https://github.com/zmkfirmware/zmk). The Kinesis fork is regularly updated to bring the latest updates and changes from base ZMK however will not always be completely up to date, some features such as new keycodes will not be immediately available on the 360 Pro after they are implemented in base ZMK.
 
 Whilst the Advantage 360 Pro is compatible with base ZMK (The pull request to merge it can be seen [here](https://github.com/zmkfirmware/zmk/pull/1454) if you want to see how to implement it) some of the more advanced features (the indicator RGB leds) will not work, and Kinesis cannot provide customer service for usage of base ZMK. Likewise the ZMK community cannot provide support for either the Kinesis keymap editor, nor any usage of the Kinesis custom fork.
 
-## Other support
+### Other support
 
 Further support resources can be found on Kinesis.com:
 
@@ -156,3 +279,5 @@ Further support resources can be found on Kinesis.com:
 In the event of a hardware issue it may be necessary to open a support ticket directly with Kinesis as opposed to a GitHub issue in this repository.
 * https://kinesis-ergo.com/support/kb360pro/#ticket
 
+
+</details>
