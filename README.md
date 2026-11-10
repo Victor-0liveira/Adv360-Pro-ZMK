@@ -28,24 +28,6 @@ The Advantage 360 throws out almost everything your fingers know:
 
 The first days feel like learning to type again. Then something clicks: shortcuts get *closer*, the mouse gets *further*, and going back to a laptop keyboard feels cramped.
 
-### 📜 The commit log tells the story
-
-This repo's history is an honest diary of tuning a keyboard from scratch:
-
-```mermaid
-timeline
-    title Tuning the 360 Pro (October 2026)
-    Oct 5 : modifier keys : meta and ctrl right
-    Oct 6 : "don't know" : pt br : macro testing : "wow"
-    Oct 7 : del word : "try" : "aaaaa" : homerow mods
-    Oct 8 : "undoing" : delete line : page up/down : "mouse tbm?kkkk" : fn layer
-    Oct 9 : scroll : select line
-    Oct 15 : Page Up/Down
-```
-
-Yes, there is a commit called `aaaaa`. Yes, home row mods came in on the 7th and got rolled back on the 8th. That's how keyboard tuning goes: you try something, live with it for a day, and keep only what survives. 🫡
-
----
 
 ## 🗺️ My layout
 
